@@ -34,14 +34,33 @@ const DATA = [
   }
 ];
 
-function WormCard() {
+function RecommendFoodCard() {
   return (
-    <Card title="Local Modules" image={require("../shared/snakeworm.jpg")}>
+    <Card title="Recommend Food" image={require("../shared/images/worm6.jpg")}>
       {/*react-native-elements Card*/}
       <Text style={styles.paragraph}>
-        This is a card from the react-native-elements. This is a card from the
-        react-native-elements. This is a card from the react-native-elements.
-        This is a card from the react-native-elements.
+        The ideal diet for composting worms is non-acidic fruit and vegetable
+        scraps. Grains, bread, coffee grounds, tea bags, and pasta are also fair
+        game. Aged grass clippings, hair, and herbivore animal manure are
+        compostable. Egg Shells. Larger items should be cut up or run through a
+        food processor. Smaller pieces break down faster. This reduces odor and
+        discourages pests.
+      </Text>
+    </Card>
+  );
+}
+
+function NotRecommendFoodCard() {
+  return (
+    <Card title="Bad Food" image={require("../shared/images/worm7.jpg")}>
+      {/*react-native-elements Card*/}
+      <Text style={styles.paragraph}>
+        TAKES TOO LONG: Whole cabbages and watermelon rind halves will take too
+        long to break down. CAN SPOIL BIN: , BAD IDEA: Most non-food items.
+        HARMFUL TO WORMS: salty snacks, spicy foods, oily sauces, Processed food
+        NOT VEGETABLES: Animal feces Meat Fats or fatty foods Dairy foods meat
+        scraps, TOO ACIDIC: yogurt Onions and onion skins Potatoes and potato
+        peels Citrus fruits and their rinds pineapple bushels of tomatoes
       </Text>
     </Card>
   );
@@ -57,8 +76,8 @@ export default function FoodScreen() {
         contentContainerStyle={styles.contentContainer}
       >
         <View>
-          <WormCard />
-          <WormCard />
+          <RecommendFoodCard />
+          <NotRecommendFoodCard />
         </View>
       </ScrollView>
     </View>
@@ -66,7 +85,7 @@ export default function FoodScreen() {
 }
 
 FoodScreen.navigationOptions = {
-  title: "Good Food Screen"
+  title: "Food Screen"
 };
 
 const styles = StyleSheet.create({

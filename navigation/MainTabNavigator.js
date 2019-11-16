@@ -89,7 +89,12 @@ const FoodStack = createStackNavigator(
 
 FoodStack.navigationOptions = {
   tabBarLabel: "Food",
-  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="pizza" />
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === "ios" ? "ios-pizza" : "md-pizza"}
+    />
+  )
 };
 
 FoodStack.path = "";
@@ -104,7 +109,14 @@ const InfoStack = createStackNavigator(
 InfoStack.navigationOptions = {
   tabBarLabel: "Info",
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name="information-circle" />
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === "ios"
+          ? "ios-information-circle"
+          : "md-information-circle"
+      }
+    />
   )
 };
 
@@ -120,7 +132,10 @@ const QuickStartStack = createStackNavigator(
 QuickStartStack.navigationOptions = {
   tabBarLabel: "QuickStart",
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name="star-outline" />
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === "ios" ? "ios-star-outline" : "md-star-outline"}
+    />
   )
 };
 
