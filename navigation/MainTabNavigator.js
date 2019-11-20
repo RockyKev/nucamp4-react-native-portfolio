@@ -108,7 +108,7 @@ const QuestionsStack = createStackNavigator(
 );
 
 QuestionsStack.navigationOptions = {
-  tabBarLabel: "Questions",
+  tabBarLabel: "Common Questions",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
