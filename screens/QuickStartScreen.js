@@ -37,18 +37,21 @@ const DATA = [
 function VermicompostCard() {
   return (
     <Card
-      title="What is Vermicompost?"
+      title="What is Vermicomposting?"
       image={require("../shared/images/worm-compost.jpg")}
     >
       {/*react-native-elements Card*/}
       <Text style={styles.paragraph}>
         Vermicomposting is a bio-friendly method of using red worms to recycle
         food scraps and other organic material into a valuable soil amendment
-        called vermicompost, or worm casts. Worms are eating nutrient-rich fruit
-        and vegetable scraps, and turning them into nutrient-rich compost. The
-        casts are rich in nutrients and growth promoting substances that worm
-        compost is frequently called 'Black Gold'. Vermicomposting can be done
-        in small apartment, a regular-sized house, or even for major buildings.
+        called vermicompost, or worm casts. {"\n"} {"\n"}
+        Worms are eating nutrient-rich fruit and vegetable scraps, and turning
+        them into nutrient-rich compost. The casts are rich in nutrients and
+        growth promoting substances that worm compost is frequently called
+        <Text style={{ fontWeight: "bold" }}>Black Gold'.</Text> {"\n"} {"\n"}
+        Vermicomposting can be done in small apartment, a regular-sized house,
+        or even for major buildings. When done correctly, unlike regular
+        composting, there's no smell and minimal maintenance. {"\n"} {"\n"}
         With a little effort, the recycling of vegetable scraps and brown
         material (like newspaper and cardboard) can produce incredibly rich
         Organic fertilizer that outperforms chemical fertilization every time.
@@ -136,6 +139,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff"
+  },
+  paragraph: {
+    margin: 5,
+    lineHeight: 16
   },
   developmentModeText: {
     marginBottom: 20,

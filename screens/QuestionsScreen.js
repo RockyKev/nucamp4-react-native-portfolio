@@ -107,7 +107,7 @@ function WormsCard() {
   );
 }
 
-export default function InfoScreen() {
+export default function QuestionsScreen() {
   return (
     <View style={styles.container}>
       {console.log("here")}
@@ -127,7 +127,7 @@ export default function InfoScreen() {
   );
 }
 
-InfoScreen.navigationOptions = {
+QuestionsScreen.navigationOptions = {
   title: "Info Screen"
 };
 

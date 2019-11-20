@@ -7,7 +7,8 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
+  Animated
 } from "react-native";
 
 import { MonoText } from "../components/StyledText";
@@ -15,12 +16,11 @@ import { Card } from "react-native-elements";
 
 function WormCard() {
   return (
-    <Card title="Local Modules" image={require("../shared/snakeworm.jpg")}>
+    <Card title="Welcome" image={require("../shared/images/worm3.jpg")}>
       {/*react-native-elements Card*/}
       <Text style={styles.paragraph}>
-        This is a card from the react-native-elements. This is a card from the
-        react-native-elements. This is a card from the react-native-elements.
-        This is a card from the react-native-elements.
+        Welcome to the Worm App! You love worms. That's why you downloaded this.
+        Click on the buttons on the bottom to learn more stuff about worms.
       </Text>
     </Card>
   );
@@ -34,43 +34,18 @@ export default function HomeScreen() {
         contentContainerStyle={styles.contentContainer}
       >
         <View style={styles.getStartedContainer}>
-          <WormCard />
+          <Text style={styles.headerText}> Welcome to the Worm App!</Text>
 
-          <Text style={styles.getStartedText}>Get started by opening</Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-          >
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-            Change ALL THE TEXT text and your app will automatically reload.
+          <Image
+            style={styles.welcomeImage}
+            source={require("../shared/images/earthworm.png")}
+          />
+          <Text style={styles.bottomText}>
+            You love worms. That's why you downloaded this. Click on the buttons
+            on the bottom to learn more stuff about worms.
           </Text>
         </View>
-
-        {/* <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              Help, it didn’t automatically reload!
-            </Text>
-          </TouchableOpacity>
-        </View> */}
       </ScrollView>
-
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
-        </Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.navigationFilename]}
-        >
-          <MonoText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
-          </MonoText>
-        </View>
-      </View>
     </View>
   );
 }
@@ -79,45 +54,21 @@ HomeScreen.navigationOptions = {
   header: null
 };
 
-// function DevelopmentModeNotice() {
-//   if (__DEV__) {
-//     const learnMoreButton = (
-//       <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-//         Learn more
-//       </Text>
-//     );
-
-//     return (
-//       <Text style={styles.developmentModeText}>
-//         Development mode is enabled: your app will be slower but you can use
-//         useful development tools. {learnMoreButton}
-//       </Text>
-//     );
-//   } else {
-//     return (
-//       <Text style={styles.developmentModeText}>
-//         You are not in development mode: your app will run at full speed.
-//       </Text>
-//     );
-//   }
-// }
-
-// function handleLearnMorePress() {
-//   WebBrowser.openBrowserAsync(
-//     "https://docs.expo.io/versions/latest/workflow/development-mode/"
-//   );
-// }
-
-// function handleHelpPress() {
-//   WebBrowser.openBrowserAsync(
-//     "https://docs.expo.io/versions/latest/workflow/up-and-running/#cant-see-your-changes"
-//   );
-// }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff"
+  },
+  headerText: {
+    fontSize: 32,
+    marginTop: 100,
+    marginBottom: 20,
+    textAlign: "center"
+  },
+  bottomText: {
+    fontSize: 20,
+    marginTop: 20,
+    textAlign: "center"
   },
   developmentModeText: {
     marginBottom: 20,
@@ -135,8 +86,8 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 256,
+    height: 256,
     resizeMode: "contain",
     marginTop: 3,
     marginLeft: -10

@@ -7,12 +7,13 @@ import {
 
 import TabBarIcon from "../components/TabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
-import LinksScreen from "../screens/LinksScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+// import LinksScreen from "../screens/LinksScreen";
+// import SettingsScreen from "../screens/SettingsScreen";
 
-import FoodScreen from "../screens/FoodScreen";
 import QuickStartScreen from "../screens/QuickStartScreen";
-import InfoScreen from "../screens/InfoScreen";
+import QuestionsScreen from "../screens/QuestionsScreen";
+import FoodScreen from "../screens/FoodScreen";
+import ClickerScreen from "../screens/ClickerScreen";
 
 const config = Platform.select({
   web: { headerMode: "screen" },
@@ -42,43 +43,43 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = "";
 
-const LinksStack = createStackNavigator(
+// const LinksStack = createStackNavigator(
+//   {
+//     Links: LinksScreen
+//   },
+//   config
+// );
+
+// LinksStack.navigationOptions = {
+//   tabBarLabel: "Links",
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={Platform.OS === "ios" ? "ios-link" : "md-link"}
+//     />
+//   )
+// };
+
+// LinksStack.path = "";
+
+const ClickerStack = createStackNavigator(
   {
-    Links: LinksScreen
+    Clicker: ClickerScreen
   },
   config
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: "Links",
+ClickerStack.navigationOptions = {
+  tabBarLabel: "Clicker",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === "ios" ? "ios-link" : "md-link"}
+      name={Platform.OS === "ios" ? "ios-play" : "md-play"}
     />
   )
 };
 
-LinksStack.path = "";
-
-const SettingsStack = createStackNavigator(
-  {
-    Settings: SettingsScreen
-  },
-  config
-);
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: "Settings",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === "ios" ? "ios-options" : "md-options"}
-    />
-  )
-};
-
-SettingsStack.path = "";
+ClickerStack.path = "";
 
 const FoodStack = createStackNavigator(
   {
@@ -92,35 +93,31 @@ FoodStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === "ios" ? "ios-pizza" : "md-pizza"}
+      name={Platform.OS === "ios" ? "ios-ice-cream" : "md-ice-cream"}
     />
   )
 };
 
 FoodStack.path = "";
 
-const InfoStack = createStackNavigator(
+const QuestionsStack = createStackNavigator(
   {
-    Info: InfoScreen
+    Questions: QuestionsScreen
   },
   config
 );
 
-InfoStack.navigationOptions = {
-  tabBarLabel: "Info",
+QuestionsStack.navigationOptions = {
+  tabBarLabel: "Questions",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === "ios"
-          ? "ios-information-circle"
-          : "md-information-circle"
-      }
+      name={Platform.OS === "ios" ? "ios-help" : "md-help"}
     />
   )
 };
 
-InfoStack.path = "";
+QuestionsStack.path = "";
 
 const QuickStartStack = createStackNavigator(
   {
@@ -145,9 +142,10 @@ QuickStartStack.path = "";
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  InfoStack,
   QuickStartStack,
-  FoodStack
+  QuestionsStack,
+  FoodStack,
+  ClickerStack
 });
 
 tabNavigator.path = "";
