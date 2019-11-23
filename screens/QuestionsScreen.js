@@ -45,7 +45,7 @@ function _2FeedingCard() {
       image={require("../shared/images/worm-bin2.jpg")}
     >
       <Text style={styles.paragraph}>
-        TPlace the scraps in a shallow hole in which to bury them. Burying keeps
+        Place the scraps in a shallow hole in which to bury them. Burying keeps
         pests from calling your worm bin home. Cut food scraps into pieces about
         1 inch square or run it through a food processor. Hypothetically, worms
         can consume a whole cabbage head in a month. But shred the cabbage into
