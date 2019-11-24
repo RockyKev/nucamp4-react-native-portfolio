@@ -54,10 +54,16 @@ HomeScreen.navigationOptions = {
   header: null
 };
 
+// const color_bkgd = "#f3d3bd";
+const color_tan = "#F3D3BD";
+const color_beige = "#fcfaf9";
+const color_grey = "#77878b";
+const color_weirdgrey = "#305252";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: color_tan
   },
   headerText: {
     fontSize: 32,

@@ -16,8 +16,9 @@ import { Card } from "react-native-elements";
 function _1HowWetCard() {
   return (
     <Card
+      style={styles.card}
       title="#1 - How wet should the bedding be?"
-      image={require("../shared/images/worm-bin2.jpg")}
+      image={require("../shared/images/worm-dirt.jpg")}
     >
       <Text style={styles.paragraph}>
         Worms need a moist environment. Too wet, and the bin becomes stinky and
@@ -42,7 +43,7 @@ function _2FeedingCard() {
   return (
     <Card
       title="#2 - What is a good process for feeding?"
-      image={require("../shared/images/worm-bin2.jpg")}
+      image={require("../shared/images/worm3.jpg")}
     >
       <Text style={styles.paragraph}>
         Place the scraps in a shallow hole in which to bury them. Burying keeps
@@ -89,7 +90,7 @@ function _3SmellCard() {
   return (
     <Card
       title="#3 - Is there a smell?"
-      image={require("../shared/images/worm-bin2.jpg")}
+      image={require("../shared/images/garden.jpg")}
     >
       <Text style={styles.paragraph}>
         A healthy worm bin has no foul odors. If you stick your face in your
@@ -115,7 +116,7 @@ function _4ReproduceCard() {
   return (
     <Card
       title="#4 - What happens when worms reproduce/die?"
-      image={require("../shared/images/worm-bin2.jpg")}
+      image={require("../shared/images/worm-pregnant.jpg")}
     >
       <Text style={styles.paragraph}>
         If a worm dies in your bin, you probably will not notice it. Since the
@@ -150,7 +151,7 @@ function _5WinterCard() {
   return (
     <Card
       title="#5 - Can my worms survive in the winter?"
-      image={require("../shared/images/worm-bin2.jpg")}
+      image={require("../shared/images/worm6.jpg")}
     >
       <Text style={styles.paragraph}>
         Just like people, composting worms have an ideal temperature range. The
@@ -175,7 +176,7 @@ function _6AnythingElseCard() {
   return (
     <Card
       title="#6 - Anything else I should know about worms?"
-      image={require("../shared/images/worm-bin2.jpg")}
+      image={require("../shared/images/worm5.jpg")}
     >
       <Text style={styles.paragraph}>
         Worms need moisture, air, food, darkness, and warm (but not hot)
@@ -208,7 +209,7 @@ function _7HowToCompostCard() {
   return (
     <Card
       title="#7 - How do I use the compost?"
-      image={require("../shared/images/worm-bin2.jpg")}
+      image={require("../shared/images/worm4.jpg")}
     >
       <Text style={styles.paragraph}>
         You can use your compost immediately, or you can store it and use it
@@ -230,7 +231,7 @@ function _8HowMuchFoodCard() {
   return (
     <Card
       title="#8 - How much food should I give my worms?"
-      image={require("../shared/images/worm-bin2.jpg")}
+      image={require("../shared/images/worm3.jpg")}
     >
       <Text style={styles.paragraph}>
         Enthusiastic worm bin owners toss every available scrap into the bin.
@@ -251,7 +252,7 @@ function _9DoIhaveHarvestCard() {
   return (
     <Card
       title="#9 - Do I have to harvest Worm Castings?"
-      image={require("../shared/images/worm-bin2.jpg")}
+      image={require("../shared/images/worm-harvest.jpg")}
     >
       <Text style={styles.paragraph}>
         Avid gardeners eagerly look forward to removing finished compost from
@@ -302,7 +303,7 @@ export default function QuestionsScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <View>
+        <View style={styles.container}>
           <_1HowWetCard />
           <_2FeedingCard />
           <_3SmellCard />
@@ -320,14 +321,25 @@ export default function QuestionsScreen() {
 }
 
 QuestionsScreen.navigationOptions = {
-  title: "Info Screen"
+  title: "Common Questions Screen"
 };
+
+// const color_bkgd = "#f3d3bd";
+const color_tan = "#F3D3BD";
+const color_beige = "#fcfaf9";
+const color_grey = "#77878b";
+const color_weirdgrey = "#305252";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: color_tan
   },
+  card: {
+    fontSize: 24,
+    backgroundColor: color_grey
+  },
+
   textGold: {
     fontWeight: "bold",
     color: "gold"
@@ -337,7 +349,8 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     margin: 5,
-    lineHeight: 16
+    lineHeight: 16,
+    backgroundColor: color_beige
   },
   list: {
     paddingLeft: 40

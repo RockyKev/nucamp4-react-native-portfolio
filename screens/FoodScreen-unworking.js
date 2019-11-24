@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Image,
   Platform,
@@ -7,8 +7,11 @@ import {
   Text,
   TouchableOpacity,
   View,
-  FlatList
+  Button
 } from "react-native";
+
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 
 import * as Animatable from "react-native-animatable";
 import { Card } from "react-native-elements";
@@ -17,7 +20,7 @@ function _1BeddingCard() {
   return (
     <Card
       title="Good Bedding (brown)"
-      image={require("../shared/images/worm3.jpg")}
+      image={require("../shared/images/worm6.jpg")}
     >
       <Text style={styles.paragraph}>
         Remember that the bedding is 'the brown' for your worms. It's not like
@@ -43,7 +46,7 @@ function _2GoodFoodCard() {
   return (
     <Card
       title="Good Food (Green)"
-      image={require("../shared/images/worm2.jpg")}
+      image={require("../shared/images/worm6.jpg")}
     >
       <Text style={styles.paragraph}>
         The ideal diet for composting worms is non-acidic fruit and vegetable
@@ -79,7 +82,7 @@ function _3BadFoodCard() {
   return (
     <Card
       title="Bad Food (No No)"
-      image={require("../shared/images/worm1.jpg")}
+      image={require("../shared/images/worm6.jpg")}
     >
       <Text style={styles.paragraph}>
         Acidic foods upset the pH in the bin. Worm bins need a neutral pH to
@@ -117,46 +120,53 @@ function _4RuleOfThumbCard() {
   );
 }
 
-export default function FoodScreen() {
-  return (
-    <View style={styles.container}>
-      {console.log("In Food Screen")}
+export default class FoodScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        {console.log("In Food Screen")}
 
-      <ScrollView
-        style={styles.container}
-        contentContainerStyle={styles.contentContainer}
-      >
-        <View>
-          <_1BeddingCard />
-          <_2GoodFoodCard />
-          <_3BadFoodCard />
-          <_4RuleOfThumbCard />
-        </View>
-      </ScrollView>
-    </View>
-  );
+        <ScrollView
+          style={styles.container}
+          contentContainerStyle={styles.contentContainer}
+        >
+          <View>
+            <Button
+              title="go to LinksScreen"
+              onPress={() => this.props.navigation.navigate("LinksScreen")}
+            />
+            <_1BeddingCard />
+            <_2GoodFoodCard />
+            <_3BadFoodCard />
+            <_4RuleOfThumbCard />
+          </View>
+        </ScrollView>
+      </View>
+    );
+  }
 }
+
+const FoodStack = createStackNavigator(
+  {
+    LinksScreen: LinksScreen,
+    FoodScreen: FoodScreen
+  },
+  {
+    initialRouteName: "FoodScreen"
+  }
+);
 
 FoodScreen.navigationOptions = {
   title: "Food Screen"
 };
 
-// const color_bkgd = "#f3d3bd";
-const color_tan = "#F3D3BD";
-const color_beige = "#fcfaf9";
-const color_grey = "#77878b";
-const color_weirdgrey = "#305252";
+const FoodContainer = createAppContainer(FoodStack);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: color_tan
+    backgroundColor: "#fff"
   },
-  card: {
-    fontSize: 24,
-    backgroundColor: color_grey
-  },
-
   textGold: {
     fontWeight: "bold",
     color: "gold"
@@ -166,8 +176,7 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     margin: 5,
-    lineHeight: 16,
-    backgroundColor: color_beige
+    lineHeight: 16
   },
   list: {
     paddingLeft: 40

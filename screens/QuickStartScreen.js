@@ -108,7 +108,7 @@ function WormBinCard() {
   return (
     <Card
       title="Setting up a Worm Bin"
-      image={require("../shared/images/worm3.jpg")}
+      image={require("../shared/images/worm-bin.jpg")}
     >
       {/*react-native-elements Card*/}
       <Text style={styles.paragraph}>
@@ -144,7 +144,7 @@ function BrownGreenCard() {
   return (
     <Card
       title="Brown and Green Concept"
-      image={require("../shared/images/worm3.jpg")}
+      image={require("../shared/images/worm6.jpg")}
     >
       {/*react-native-elements Card*/}
       <Text style={styles.paragraph}>
@@ -162,7 +162,7 @@ function BeddingCard() {
   return (
     <Card
       title="Setting up the bedding (The brown)"
-      image={require("../shared/images/worm3.jpg")}
+      image={require("../shared/images/worm-bin2.jpg")}
     >
       {/*react-native-elements Card*/}
       <Text style={styles.paragraph}>
@@ -200,7 +200,7 @@ function FeedingCard() {
   return (
     <Card
       title="How about feeding? (The green)"
-      image={require("../shared/images/worm3.jpg")}
+      image={require("../shared/images/worm-dirt.jpg")}
     >
       {/*react-native-elements Card*/}
       <Text style={styles.paragraph}>
@@ -221,7 +221,7 @@ function FeedingCard() {
 
 function HarvestingCard() {
   return (
-    <Card title="Using Worms" image={require("../shared/images/worm3.jpg")}>
+    <Card title="Using Worms" image={require("../shared/images/worm-cans.jpg")}>
       {/*react-native-elements Card*/}
       <Text style={styles.paragraph}>
         After several months, worms need to be separated from their castings
@@ -241,7 +241,7 @@ function HarvestingCard() {
 
 function RepeatCycleCard() {
   return (
-    <Card title="Using Worms" image={require("../shared/images/worm3.jpg")}>
+    <Card title="Using Worms" image={require("../shared/images/worm2.jpg")}>
       <Text style={styles.paragraph}>
         After harvesting and replacing the old bin section with the new bin
         section, you start the process again. {"\n"} {"\n"}Congratulations - you
@@ -281,11 +281,22 @@ QuickStartScreen.navigationOptions = {
   title: "Quick Start Screen"
 };
 
+// const color_bkgd = "#f3d3bd";
+const color_tan = "#F3D3BD";
+const color_beige = "#fcfaf9";
+const color_grey = "#77878b";
+const color_weirdgrey = "#305252";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: color_tan
   },
+  card: {
+    fontSize: 24,
+    backgroundColor: color_grey
+  },
+
   textGold: {
     fontWeight: "bold",
     color: "gold"
@@ -295,7 +306,8 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     margin: 5,
-    lineHeight: 16
+    lineHeight: 16,
+    backgroundColor: color_beige
   },
   list: {
     paddingLeft: 40
